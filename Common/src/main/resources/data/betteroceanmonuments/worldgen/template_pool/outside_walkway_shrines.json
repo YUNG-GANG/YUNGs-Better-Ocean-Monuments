@@ -1,11 +1,11 @@
 {
-  "name": "betteroceanmonuments:starts",
+  "name": "betteroceanmonuments:outside_walkway_shrines",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "betteroceanmonuments:start",
+        "location": "betteroceanmonuments:outside_walkway_shrine_0",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

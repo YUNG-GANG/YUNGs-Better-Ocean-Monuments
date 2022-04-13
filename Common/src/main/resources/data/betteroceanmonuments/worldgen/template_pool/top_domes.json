@@ -1,11 +1,11 @@
 {
-  "name": "betteroceanmonuments:starts",
+  "name": "betteroceanmonuments:top_domes",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "betteroceanmonuments:start",
+        "location": "betteroceanmonuments:top_dome_0",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

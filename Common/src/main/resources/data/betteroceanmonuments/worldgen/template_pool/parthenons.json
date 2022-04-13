@@ -1,11 +1,11 @@
 {
-  "name": "betteroceanmonuments:starts",
+  "name": "betteroceanmonuments:parthenons",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "betteroceanmonuments:start",
+        "location": "betteroceanmonuments:parthenon_0",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
