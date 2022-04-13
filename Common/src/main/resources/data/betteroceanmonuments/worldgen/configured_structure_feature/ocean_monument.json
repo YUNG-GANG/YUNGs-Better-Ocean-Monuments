@@ -1,0 +1,11 @@
+{
+  "type": "betteroceanmonuments:ocean_monument",
+  "config": {
+    "start_pool": "betteroceanmonuments:starts",
+    "size": 20
+  },
+  "biomes": "#betteroceanmonuments:has_structure/has_better_ocean_monument",
+  "adapt_noise": false,
+  "spawn_overrides": {
+  }
+}

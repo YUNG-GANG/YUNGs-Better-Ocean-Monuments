@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="LGPLv3"
+issueTrackerURL="https://github.com/yungnickyoung/YUNGs-Better-Ocean-Monuments/issues"
+
+[[mods]]
+    modId="betteroceanmonuments"
+    version="${file.jarVersion}"
+    displayName="YUNG's Better Ocean Monuments"
+    credits="Thanks so much to all my patrons!"
+    authors="YUNGNICKYOUNG, Tera"
+    description="A complete redesign of Minecraft's ocean monuments"
+    logoFile="logo.png"
+    displayURL="https://www.curseforge.com/minecraft/mc-mods/yungs-better-ocean-monuments"
+
+[[dependencies.betteroceanmonuments]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+
+[[dependencies.betteroceanmonuments]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40.0.8,)"
+
+[[dependencies.betteroceanmonuments]]
+    modId="yungsapi"
+    versionRange="[1.18.2-Forge-2.0.7,)"
+    mandatory=true
+    ordering="NONE"
+    side="BOTH"
