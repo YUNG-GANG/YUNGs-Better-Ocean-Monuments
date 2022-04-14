@@ -1,4 +1,10 @@
 {
   "processors": [
+    {
+      "processor_type": "betteroceanmonuments:air_processor"
+    },
+    {
+      "processor_type": "betteroceanmonuments:waterlog_processor"
+    }
   ]
 }

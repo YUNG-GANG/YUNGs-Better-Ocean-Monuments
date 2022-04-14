@@ -8,6 +8,8 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 
 public class StructureProcessorModuleFabric {
     public static void init() {
+        register("air_processor", StructureProcessorModule.AIR_PROCESSOR);
+        register("waterlog_processor", StructureProcessorModule.WATERLOG_PROCESSOR);
     }
 
     private static <P extends StructureProcessor> StructureProcessorType<P> register(String name, StructureProcessorType<P> processorType) {

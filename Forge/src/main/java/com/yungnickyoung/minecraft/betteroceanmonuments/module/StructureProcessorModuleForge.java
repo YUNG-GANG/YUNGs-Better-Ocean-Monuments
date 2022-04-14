@@ -15,6 +15,8 @@ public class StructureProcessorModuleForge {
 
     private static void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            register("air_processor", StructureProcessorModule.AIR_PROCESSOR);
+            register("waterlog_processor", StructureProcessorModule.WATERLOG_PROCESSOR);
         });
     }
 

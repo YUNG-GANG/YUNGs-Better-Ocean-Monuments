@@ -28,7 +28,7 @@ public class OceanMonumentStructure extends StructureFeature<YungJigsawConfig> {
             WorldgenRandom worldgenRandom = new WorldgenRandom(new LegacyRandomSource(0L));
             worldgenRandom.setLargeFeatureSeed(context.seed(), context.chunkPos().x, context.chunkPos().z);
 
-            int y = 60;
+            int y = 23;
             BlockPos startPos = new BlockPos(context.chunkPos().getMiddleBlockX(), y, context.chunkPos().getMiddleBlockZ());
 
             // Only generate if location is valid

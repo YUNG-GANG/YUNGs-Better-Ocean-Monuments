@@ -7,5 +7,17 @@
   "biomes": "#betteroceanmonuments:has_structure/has_better_ocean_monument",
   "adapt_noise": false,
   "spawn_overrides": {
+    "monster": {
+      "bounding_box": "structure",
+      "spawns": [
+        {
+          "type": "minecraft:guardian",
+          "weight": 1,
+          "minCount": 2,
+          "maxCount": 4
+        }
+      ]
+    },
+    "creature": {}
   }
 }
