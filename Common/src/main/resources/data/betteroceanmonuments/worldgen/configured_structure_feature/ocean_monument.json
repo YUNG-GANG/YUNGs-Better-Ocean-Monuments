@@ -8,7 +8,7 @@
   "adapt_noise": false,
   "spawn_overrides": {
     "monster": {
-      "bounding_box": "structure",
+      "bounding_box": "full",
       "spawns": [
         {
           "type": "minecraft:guardian",
@@ -17,7 +17,6 @@
           "maxCount": 4
         }
       ]
-    },
-    "creature": {}
+    }
   }
 }
