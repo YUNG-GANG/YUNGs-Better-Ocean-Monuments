@@ -23,34 +23,34 @@
     {
       "weight": 1,
       "element": {
-        "location": "betteroceanmonuments:maze_chamber_battle_room/maze_chamber_battle_room_2",
-        "processors": "betteroceanmonuments:main",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "betteroceanmonuments:maze_chamber_battle_room/maze_chamber_battle_room_3",
-        "processors": "betteroceanmonuments:main",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "betteroceanmonuments:maze_chamber_battle_room/maze_chamber_battle_room_4",
-        "processors": "betteroceanmonuments:main",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
         "location": "betteroceanmonuments:maze_chamber_battle_room/maze_chamber_battle_room_5",
+        "processors": "betteroceanmonuments:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betteroceanmonuments:maze_chamber_battle_room/maze_chamber_battle_room_6",
+        "processors": "betteroceanmonuments:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betteroceanmonuments:maze_chamber_battle_room/maze_chamber_battle_room_7",
+        "processors": "betteroceanmonuments:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betteroceanmonuments:maze_chamber_battle_room/maze_chamber_battle_room_8",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

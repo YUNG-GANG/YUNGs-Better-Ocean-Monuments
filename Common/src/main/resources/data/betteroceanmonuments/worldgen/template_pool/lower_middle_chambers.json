@@ -5,15 +5,6 @@
     {
       "weight": 1,
       "element": {
-        "location": "betteroceanmonuments:lower_middle_chamber/lower_middle_chamber_0",
-        "processors": "betteroceanmonuments:main",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
         "location": "betteroceanmonuments:lower_middle_chamber/lower_middle_chamber_1",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
@@ -33,24 +24,6 @@
       "weight": 1,
       "element": {
         "location": "betteroceanmonuments:lower_middle_chamber/lower_middle_chamber_3",
-        "processors": "betteroceanmonuments:main",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "betteroceanmonuments:lower_middle_chamber/lower_middle_chamber_4",
-        "processors": "betteroceanmonuments:main",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "betteroceanmonuments:lower_middle_chamber/lower_middle_chamber_5",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

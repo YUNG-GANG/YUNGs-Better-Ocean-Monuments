@@ -5,22 +5,24 @@ import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcesso
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.Random;
 
 /**
- * Waterlogs all waterloggable blocks.
+ * Replaces brown stained glass with soul sand or magma.
  */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class WaterlogProcessor extends StructureProcessor {
-    public static final WaterlogProcessor INSTANCE = new WaterlogProcessor();
-    public static final Codec<WaterlogProcessor> CODEC = Codec.unit(() -> INSTANCE);
+public class SoulSandMagmaProcessor extends StructureProcessor {
+    public static final SoulSandMagmaProcessor INSTANCE = new SoulSandMagmaProcessor();
+    public static final Codec<SoulSandMagmaProcessor> CODEC = Codec.unit(() -> INSTANCE);
 
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
@@ -29,19 +31,15 @@ public class WaterlogProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.hasProperty(BlockStateProperties.WATERLOGGED)) {
-            if (blockInfoGlobal.pos.getY() >= levelReader.getSeaLevel()) {
-                return blockInfoGlobal;
-            }
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(
-                    blockInfoGlobal.pos,
-                    blockInfoGlobal.state.setValue(BlockStateProperties.WATERLOGGED, true),
-                    blockInfoGlobal.nbt);
+        if (blockInfoGlobal.state.getBlock() == Blocks.BROWN_STAINED_GLASS) {
+            Random random = structurePlacementData.getRandom(blockInfoGlobal.pos);
+            BlockState blockState = random.nextBoolean() ? Blocks.MAGMA_BLOCK.defaultBlockState() : Blocks.SOUL_SAND.defaultBlockState();
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, blockState, blockInfoGlobal.nbt);
         }
         return blockInfoGlobal;
     }
 
     protected StructureProcessorType<?> getType() {
-        return StructureProcessorModule.WATERLOG_PROCESSOR;
+        return StructureProcessorModule.SOUL_SAND_MAGMA_PROCESSOR;
     }
 }

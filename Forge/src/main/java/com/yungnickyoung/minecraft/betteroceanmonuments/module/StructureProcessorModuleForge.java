@@ -17,6 +17,9 @@ public class StructureProcessorModuleForge {
         event.enqueueWork(() -> {
             register("air_processor", StructureProcessorModule.AIR_PROCESSOR);
             register("waterlog_processor", StructureProcessorModule.WATERLOG_PROCESSOR);
+            register("soul_sand_magma_processor", StructureProcessorModule.SOUL_SAND_MAGMA_PROCESSOR);
+            register("random_prismarine_slab_decoration_processor", StructureProcessorModule.RANDOM_PRISMARINE_SLAB_DECORATION_PROCESSOR);
+            register("random_dark_prismarine_slab_decoration_processor", StructureProcessorModule.RANDOM_DARK_PRISMARINE_SLAB_DECORATION_PROCESSOR);
         });
     }
 

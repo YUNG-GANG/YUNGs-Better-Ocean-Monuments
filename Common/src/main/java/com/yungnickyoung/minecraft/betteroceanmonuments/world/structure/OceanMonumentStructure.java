@@ -28,7 +28,7 @@ public class OceanMonumentStructure extends StructureFeature<YungJigsawConfig> {
             WorldgenRandom worldgenRandom = new WorldgenRandom(new LegacyRandomSource(0L));
             worldgenRandom.setLargeFeatureSeed(context.seed(), context.chunkPos().x, context.chunkPos().z);
 
-            int y = 23;
+            int y = 21;
             BlockPos startPos = new BlockPos(context.chunkPos().getMiddleBlockX(), y, context.chunkPos().getMiddleBlockZ());
 
             // Only generate if location is valid
@@ -47,10 +47,10 @@ public class OceanMonumentStructure extends StructureFeature<YungJigsawConfig> {
     }
 
     private static boolean checkLocation(PieceGeneratorSupplier.Context<YungJigsawConfig> context) {
-        int i = context.chunkPos().getBlockX(9);
-        int j = context.chunkPos().getBlockZ(9);
+        int x = context.chunkPos().getBlockX(9);
+        int z = context.chunkPos().getBlockZ(9);
 
-        for(Holder<Biome> holder : context.biomeSource().getBiomesWithin(i, context.chunkGenerator().getSeaLevel(), j, 29, context.chunkGenerator().climateSampler())) {
+        for (Holder<Biome> holder : context.biomeSource().getBiomesWithin(x, context.chunkGenerator().getSeaLevel(), z, 29, context.chunkGenerator().climateSampler())) {
             if (!holder.is(BiomeTags.IS_OCEAN) &&!holder.is(BiomeTags.IS_RIVER)) {
                 return false;
             }

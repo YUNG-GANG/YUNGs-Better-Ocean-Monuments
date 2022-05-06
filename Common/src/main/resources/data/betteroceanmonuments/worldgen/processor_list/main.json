@@ -5,6 +5,15 @@
     },
     {
       "processor_type": "betteroceanmonuments:waterlog_processor"
+    },
+    {
+      "processor_type": "betteroceanmonuments:soul_sand_magma_processor"
+    },
+    {
+      "processor_type": "betteroceanmonuments:random_prismarine_slab_decoration_processor"
+    },
+    {
+      "processor_type": "betteroceanmonuments:random_dark_prismarine_slab_decoration_processor"
     }
   ]
 }
