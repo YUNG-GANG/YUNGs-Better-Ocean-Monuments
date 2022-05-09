@@ -14,6 +14,9 @@
     },
     {
       "processor_type": "betteroceanmonuments:random_dark_prismarine_slab_decoration_processor"
+    },
+    {
+      "processor_type": "betteroceanmonuments:brown_wool_processor"
     }
   ]
 }

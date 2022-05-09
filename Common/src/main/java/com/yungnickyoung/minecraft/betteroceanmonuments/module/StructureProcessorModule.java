@@ -9,4 +9,5 @@ public class StructureProcessorModule {
     public static StructureProcessorType<SoulSandMagmaProcessor> SOUL_SAND_MAGMA_PROCESSOR = () -> SoulSandMagmaProcessor.CODEC;
     public static StructureProcessorType<RandomPrismarineSlabDecorationProcessor> RANDOM_PRISMARINE_SLAB_DECORATION_PROCESSOR = () -> RandomPrismarineSlabDecorationProcessor.CODEC;
     public static StructureProcessorType<RandomDarkPrismarineSlabDecorationProcessor> RANDOM_DARK_PRISMARINE_SLAB_DECORATION_PROCESSOR = () -> RandomDarkPrismarineSlabDecorationProcessor.CODEC;
+    public static StructureProcessorType<BrownWoolProcessor> BROWN_WOOL_PROCESSOR = () -> BrownWoolProcessor.CODEC;
 }
