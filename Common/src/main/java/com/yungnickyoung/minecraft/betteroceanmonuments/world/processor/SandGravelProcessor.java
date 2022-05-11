@@ -6,23 +6,21 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Random;
 
 /**
- * Replaces brown stained glass with soul sand or magma.
+ * Replaces yellow stained glass with sand/gravel.
  */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class SoulSandMagmaProcessor extends StructureProcessor {
-    public static final SoulSandMagmaProcessor INSTANCE = new SoulSandMagmaProcessor();
-    public static final Codec<SoulSandMagmaProcessor> CODEC = Codec.unit(() -> INSTANCE);
+public class SandGravelProcessor extends StructureProcessor {
+    public static final SandGravelProcessor INSTANCE = new SandGravelProcessor();
+    public static final Codec<SandGravelProcessor> CODEC = Codec.unit(() -> INSTANCE);
 
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
@@ -31,15 +29,13 @@ public class SoulSandMagmaProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.getBlock() == Blocks.BROWN_STAINED_GLASS) {
-            Random random = structurePlacementData.getRandom(blockInfoGlobal.pos);
-            BlockState blockState = random.nextBoolean() ? Blocks.MAGMA_BLOCK.defaultBlockState() : Blocks.SOUL_SAND.defaultBlockState();
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, blockState, blockInfoGlobal.nbt);
+        if (blockInfoGlobal.state.getBlock() == Blocks.YELLOW_STAINED_GLASS) {
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, Blocks.GRAVEL.defaultBlockState(), blockInfoGlobal.nbt);
         }
         return blockInfoGlobal;
     }
 
     protected StructureProcessorType<?> getType() {
-        return StructureProcessorModule.SOUL_SAND_MAGMA_PROCESSOR;
+        return StructureProcessorModule.SAND_GRAVEL_PROCESSOR;
     }
 }

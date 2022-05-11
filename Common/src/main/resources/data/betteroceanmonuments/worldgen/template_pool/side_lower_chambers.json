@@ -32,7 +32,16 @@
     {
       "weight": 1,
       "element": {
-        "location": "betteroceanmonuments:side_lower_chamber/side_lower_chamber_open_0",
+        "location": "betteroceanmonuments:side_lower_chamber/side_lower_chamber_vents_0",
+        "processors": "betteroceanmonuments:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betteroceanmonuments:side_lower_chamber/side_lower_chamber_vents_1",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

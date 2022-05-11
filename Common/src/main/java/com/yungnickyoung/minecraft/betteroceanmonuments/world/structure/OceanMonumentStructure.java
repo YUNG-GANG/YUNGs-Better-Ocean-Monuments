@@ -5,6 +5,7 @@ import com.yungnickyoung.minecraft.yungsapi.api.YungJigsawManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.util.Mth;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -28,7 +29,11 @@ public class OceanMonumentStructure extends StructureFeature<YungJigsawConfig> {
             WorldgenRandom worldgenRandom = new WorldgenRandom(new LegacyRandomSource(0L));
             worldgenRandom.setLargeFeatureSeed(context.seed(), context.chunkPos().x, context.chunkPos().z);
 
-            int y = 21;
+            // Determine start pos
+            // TODO - move to config
+            int minY = 11;
+            int maxY = 21;
+            int y = Mth.randomBetweenInclusive(worldgenRandom, minY, maxY);
             BlockPos startPos = new BlockPos(context.chunkPos().getMiddleBlockX(), y, context.chunkPos().getMiddleBlockZ());
 
             // Only generate if location is valid
