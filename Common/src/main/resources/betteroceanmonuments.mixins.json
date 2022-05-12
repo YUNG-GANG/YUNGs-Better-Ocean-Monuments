@@ -4,6 +4,8 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "betteroceanmonuments.refmap.json",
   "mixins": [
+    "PersistentTridentMixin",
+    "ProjectileAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
