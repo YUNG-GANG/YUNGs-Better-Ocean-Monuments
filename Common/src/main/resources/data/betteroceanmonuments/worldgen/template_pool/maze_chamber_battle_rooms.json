@@ -38,17 +38,6 @@
     {
       "weight": 1,
       "element": {
-        "name": "maze_chamber_battle_room_5",
-        "location": "betteroceanmonuments:maze_chamber_battle_room/maze_chamber_battle_room_5_1",
-        "processors": "betteroceanmonuments:main",
-        "projection": "rigid",
-        "max_count": 1,
-        "element_type": "yungsapi:max_count_single_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
         "name": "maze_chamber_battle_room_6",
         "location": "betteroceanmonuments:maze_chamber_battle_room/maze_chamber_battle_room_6",
         "processors": "betteroceanmonuments:main",

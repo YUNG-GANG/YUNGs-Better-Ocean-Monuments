@@ -1,0 +1,42 @@
+{
+  "name": "betteroceanmonuments:mobs",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "betteroceanmonuments:mobs/elder_guardian",
+        "processors": "betteroceanmonuments:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betteroceanmonuments:mobs/elder_guardian_heart_of_sea",
+        "processors": "betteroceanmonuments:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betteroceanmonuments:mobs/guardian",
+        "processors": "betteroceanmonuments:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betteroceanmonuments:mobs/axolotl",
+        "processors": "betteroceanmonuments:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
