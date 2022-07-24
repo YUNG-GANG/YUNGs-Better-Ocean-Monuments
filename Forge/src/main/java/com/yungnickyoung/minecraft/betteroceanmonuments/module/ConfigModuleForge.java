@@ -1,5 +1,6 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.module;
 
+import com.yungnickyoung.minecraft.betteroceanmonuments.BetterOceanMonumentsCommon;
 import com.yungnickyoung.minecraft.betteroceanmonuments.config.BOMConfigForge;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.WorldEvent;
@@ -9,9 +10,6 @@ import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 public class ConfigModuleForge {
-    public static final String CUSTOM_CONFIG_PATH = "betteroceanmonuments";
-    public static final String VERSION_PATH = "forge-1_18_2";
-
     public static void init() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BOMConfigForge.SPEC, "betteroceanmonuments-forge-1_18_2.toml");
         MinecraftForge.EVENT_BUS.addListener(ConfigModuleForge::onWorldLoad);
@@ -29,5 +27,8 @@ public class ConfigModuleForge {
     }
 
     private static void bakeConfig() {
+        BetterOceanMonumentsCommon.CONFIG.general.startMinY = BOMConfigForge.general.startMinY.get();
+        BetterOceanMonumentsCommon.CONFIG.general.startMaxY = BOMConfigForge.general.startMaxY.get();
+        BetterOceanMonumentsCommon.CONFIG.general.disableVanillaMonuments = BOMConfigForge.general.disableVanillaMonuments.get();
     }
 }

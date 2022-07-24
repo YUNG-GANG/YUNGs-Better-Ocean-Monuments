@@ -1,3 +1,10 @@
 {
-  "text.autoconfig.betteroceanmonuments-fabric-1_18.title": "YUNG's Better Ocean Monuments"
+  "Use /locate betteroceanmonuments:ocean_monument instead!": "Use /locate betteroceanmonuments:ocean_monument instead!",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.title": "YUNG's Better Ocean Monuments",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.option.general.startMinY": "Ocean Monument Min Start Y",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.option.general.startMinY.@Tooltip": "The minimum y-value at which the ocean monument can spawn.",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.option.general.startMaxY": "Ocean Monument Max Start Y",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.option.general.startMaxY.@Tooltip": "The maximum y-value at which the ocean monument can spawn.",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.option.general.disableVanillaMonuments": "Disable Vanilla Ocean Monuments",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.option.general.disableVanillaMonuments.@Tooltip": "Whether or not vanilla ocean monuments should be disabled."
 }

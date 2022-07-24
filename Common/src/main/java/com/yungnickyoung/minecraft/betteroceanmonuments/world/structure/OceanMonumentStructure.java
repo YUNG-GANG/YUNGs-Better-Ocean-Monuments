@@ -1,5 +1,6 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.structure;
 
+import com.yungnickyoung.minecraft.betteroceanmonuments.BetterOceanMonumentsCommon;
 import com.yungnickyoung.minecraft.yungsapi.api.YungJigsawConfig;
 import com.yungnickyoung.minecraft.yungsapi.api.YungJigsawManager;
 import net.minecraft.core.BlockPos;
@@ -30,9 +31,8 @@ public class OceanMonumentStructure extends StructureFeature<YungJigsawConfig> {
             worldgenRandom.setLargeFeatureSeed(context.seed(), context.chunkPos().x, context.chunkPos().z);
 
             // Determine start pos
-            // TODO - move to config
-            int minY = 11;
-            int maxY = 21;
+            int minY = BetterOceanMonumentsCommon.CONFIG.general.startMinY;
+            int maxY = BetterOceanMonumentsCommon.CONFIG.general.startMaxY;
             int y = Mth.randomBetweenInclusive(worldgenRandom, minY, maxY);
             BlockPos startPos = new BlockPos(context.chunkPos().getMiddleBlockX(), y, context.chunkPos().getMiddleBlockZ());
 

@@ -6,7 +6,6 @@ public class FabricModulesLoader implements IModulesLoader {
     @Override
     public void loadModules() {
         ConfigModuleFabric.init();
-        TagModuleFabric.init();
         StructureProcessorModuleFabric.init();
         StructureFeatureModuleFabric.init();
     }
