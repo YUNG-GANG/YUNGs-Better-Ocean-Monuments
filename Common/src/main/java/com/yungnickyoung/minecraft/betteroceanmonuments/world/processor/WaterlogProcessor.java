@@ -5,11 +5,13 @@ import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcesso
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
+import net.minecraft.world.level.material.Material;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -29,10 +31,14 @@ public class WaterlogProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.hasProperty(BlockStateProperties.WATERLOGGED)) {
-            if (blockInfoGlobal.pos.getY() >= levelReader.getSeaLevel()) {
-                return blockInfoGlobal;
+        // Schedule fluid ticks for water blocks along chunk boundaries
+        if (blockInfoGlobal.state.getMaterial() == Material.WATER && blockInfoGlobal.pos.getY() < levelReader.getSeaLevel()) {
+            if (blockInfoGlobal.pos.getX() % 16 == 0 || blockInfoGlobal.pos.getX() % 16 == 15 || blockInfoGlobal.pos.getZ() % 16 == 0  || blockInfoGlobal.pos.getZ() % 16 == 15) {
+                levelReader.getChunk(blockInfoGlobal.pos).markPosForPostprocessing(blockInfoGlobal.pos);
             }
+        }
+        // Waterlog blocks
+        if (blockInfoGlobal.state.hasProperty(BlockStateProperties.WATERLOGGED) && blockInfoGlobal.pos.getY() < levelReader.getSeaLevel()) {
             blockInfoGlobal = new StructureTemplate.StructureBlockInfo(
                     blockInfoGlobal.pos,
                     blockInfoGlobal.state.setValue(BlockStateProperties.WATERLOGGED, true),

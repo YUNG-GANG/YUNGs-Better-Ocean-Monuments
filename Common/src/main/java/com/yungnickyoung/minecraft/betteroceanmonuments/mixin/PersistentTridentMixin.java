@@ -1,6 +1,7 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.mixin;
 
 import com.yungnickyoung.minecraft.betteroceanmonuments.BetterOceanMonumentsCommon;
+import com.yungnickyoung.minecraft.betteroceanmonuments.mixin.accessor.ProjectileAccessor;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;

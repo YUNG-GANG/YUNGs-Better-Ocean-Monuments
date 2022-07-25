@@ -33,7 +33,7 @@ public class AirProcessor extends StructureProcessor {
             if (blockInfoGlobal.pos.getY() >= levelReader.getSeaLevel()) {
                 return blockInfoGlobal;
             }
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, Blocks.WATER.defaultBlockState(), blockInfoGlobal.nbt);
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, Blocks.WATER.defaultBlockState(), null);
         }
         return blockInfoGlobal;
     }

@@ -1,4 +1,4 @@
-package com.yungnickyoung.minecraft.betteroceanmonuments.mixin;
+package com.yungnickyoung.minecraft.betteroceanmonuments.mixin.accessor;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.projectile.Projectile;

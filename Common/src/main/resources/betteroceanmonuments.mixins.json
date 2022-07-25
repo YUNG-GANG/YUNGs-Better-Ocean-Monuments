@@ -6,7 +6,8 @@
   "mixins": [
     "LocateVanillaMonumentCommandMixin",
     "PersistentTridentMixin",
-    "ProjectileAccessor"
+    "accessor.ProjectileAccessor",
+    "accessor.StructureProcessorAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
