@@ -4,8 +4,8 @@
     {
       "rolls": {
         "type": "minecraft:uniform",
-        "min": 5.0,
-        "max": 7.0
+        "min": 3.0,
+        "max": 6.0
       },
       "bonus_rolls": 0.0,
       "entries": [
@@ -13,7 +13,17 @@
           "type": "minecraft:item",
           "weight": 1,
           "name": "minecraft:nautilus_shell"
-        },
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 3.0,
+        "max": 6.0
+      },
+      "bonus_rolls": 0.0,
+      "entries": [
         {
           "type": "minecraft:item",
           "weight": 1,
