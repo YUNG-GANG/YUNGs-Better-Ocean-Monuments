@@ -12,9 +12,10 @@ public class StructureProcessorModuleFabric {
         register("waterlog_processor", StructureProcessorModule.WATERLOG_PROCESSOR);
         register("random_prismarine_slab_decoration_processor", StructureProcessorModule.RANDOM_PRISMARINE_SLAB_DECORATION_PROCESSOR);
         register("random_dark_prismarine_slab_decoration_processor", StructureProcessorModule.RANDOM_DARK_PRISMARINE_SLAB_DECORATION_PROCESSOR);
-        register("brown_wool_processor", StructureProcessorModule.BROWN_WOOL_PROCESSOR);
+        register("structure_void_processor", StructureProcessorModule.STRUCTURE_VOID_PROCESSOR);
         register("sand_gravel_processor", StructureProcessorModule.SAND_GRAVEL_PROCESSOR);
         register("random_oxidization_processor", StructureProcessorModule.RANDOM_OXIDIZATION_PROCESSOR);
+        register("seagrass_processor", StructureProcessorModule.SEAGRASS_PROCESSOR);
     }
 
     private static <P extends StructureProcessor> StructureProcessorType<P> register(String name, StructureProcessorType<P> processorType) {

@@ -13,13 +13,16 @@
       "processor_type": "betteroceanmonuments:random_oxidization_processor"
     },
     {
-      "processor_type": "betteroceanmonuments:brown_wool_processor"
+      "processor_type": "betteroceanmonuments:structure_void_processor"
     },
     {
       "processor_type": "betteroceanmonuments:air_processor"
     },
     {
       "processor_type": "betteroceanmonuments:waterlog_processor"
+    },
+    {
+      "processor_type": "betteroceanmonuments:seagrass_processor"
     }
   ]
 }

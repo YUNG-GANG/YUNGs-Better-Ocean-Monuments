@@ -1,0 +1,24 @@
+{
+  "name": "betteroceanmonuments:kelp_micro",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 2,
+      "element": {
+        "location": "betteroceanmonuments:kelp/kelp_0",
+        "processors": "betteroceanmonuments:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betteroceanmonuments:kelp/kelp_1",
+        "processors": "betteroceanmonuments:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

@@ -5,55 +5,67 @@
     {
       "weight": 100,
       "element": {
+        "name": "maze_0",
         "location": "betteroceanmonuments:side_lower_chamber/side_lower_chamber_maze_0_left",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
+        "max_count": 1,
+        "element_type": "yungsapi:max_count_single_element"
       }
     },
     {
       "weight": 100,
       "element": {
+        "name": "maze_1",
         "location": "betteroceanmonuments:side_lower_chamber/side_lower_chamber_maze_1_left",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
+        "max_count": 1,
+        "element_type": "yungsapi:max_count_single_element"
       }
     },
     {
       "weight": 100,
       "element": {
+        "name": "maze_2",
         "location": "betteroceanmonuments:side_lower_chamber/side_lower_chamber_maze_2_left",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
+        "max_count": 1,
+        "element_type": "yungsapi:max_count_single_element"
       }
     },
     {
       "weight": 100,
       "element": {
+        "name": "maze_0",
         "location": "betteroceanmonuments:side_lower_chamber/side_lower_chamber_maze_0_right",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
+        "max_count": 1,
+        "element_type": "yungsapi:max_count_single_element"
       }
     },
     {
       "weight": 100,
       "element": {
+        "name": "maze_1",
         "location": "betteroceanmonuments:side_lower_chamber/side_lower_chamber_maze_1_right",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
+        "max_count": 1,
+        "element_type": "yungsapi:max_count_single_element"
       }
     },
     {
       "weight": 100,
       "element": {
+        "name": "maze_2",
         "location": "betteroceanmonuments:side_lower_chamber/side_lower_chamber_maze_2_right",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
+        "max_count": 1,
+        "element_type": "yungsapi:max_count_single_element"
       }
     },
     {

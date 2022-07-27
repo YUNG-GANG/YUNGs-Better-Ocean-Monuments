@@ -1,22 +1,11 @@
 {
-  "name": "betteroceanmonuments:parthenons",
+  "name": "betteroceanmonuments:kelp_small",
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 100,
+      "weight": 6,
       "element": {
-        "name": "parthenon_0",
-        "location": "betteroceanmonuments:parthenon/parthenon_0",
-        "processors": "betteroceanmonuments:main",
-        "projection": "rigid",
-        "max_count": 1,
-        "element_type": "yungsapi:max_count_single_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "betteroceanmonuments:parthenon/parthenon_1",
+        "location": "betteroceanmonuments:kelp/kelp_0",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -25,7 +14,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betteroceanmonuments:parthenon/parthenon_2",
+        "location": "betteroceanmonuments:kelp/kelp_1",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -34,7 +23,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betteroceanmonuments:parthenon/parthenon_3",
+        "location": "betteroceanmonuments:kelp/kelp_2",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -43,7 +32,16 @@
     {
       "weight": 1,
       "element": {
-        "location": "betteroceanmonuments:parthenon/parthenon_4",
+        "location": "betteroceanmonuments:kelp/kelp_3",
+        "processors": "betteroceanmonuments:main",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betteroceanmonuments:kelp/kelp_4",
         "processors": "betteroceanmonuments:main",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

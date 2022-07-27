@@ -14,15 +14,15 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * Replaces brown wool with block that currently exists in the world.
+ * Replaces certain placeholder blocks with block that currently exists in the world.
  * Ultimately has the same function as structure void, but makes it easy to visualize
  * how the structure blends into terrain when building.
  */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class BrownWoolProcessor extends StructureProcessor {
-    public static final BrownWoolProcessor INSTANCE = new BrownWoolProcessor();
-    public static final Codec<BrownWoolProcessor> CODEC = Codec.unit(() -> INSTANCE);
+public class StructureVoidProcessor extends StructureProcessor {
+    public static final StructureVoidProcessor INSTANCE = new StructureVoidProcessor();
+    public static final Codec<StructureVoidProcessor> CODEC = Codec.unit(() -> INSTANCE);
 
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
@@ -31,13 +31,13 @@ public class BrownWoolProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.getBlock() == Blocks.BROWN_WOOL) {
+        if (blockInfoGlobal.state.is(Blocks.PURPUR_SLAB) || blockInfoGlobal.state.is(Blocks.BROWN_WOOL)) {
             blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, levelReader.getBlockState(blockInfoGlobal.pos), blockInfoGlobal.nbt);
         }
         return blockInfoGlobal;
     }
 
     protected StructureProcessorType<?> getType() {
-        return StructureProcessorModule.BROWN_WOOL_PROCESSOR;
+        return StructureProcessorModule.STRUCTURE_VOID_PROCESSOR;
     }
 }
