@@ -12,4 +12,5 @@ public class StructureProcessorModule {
     public static StructureProcessorType<SandGravelProcessor> SAND_GRAVEL_PROCESSOR = () -> SandGravelProcessor.CODEC;
     public static StructureProcessorType<RandomOxidizationProcessor> RANDOM_OXIDIZATION_PROCESSOR = () -> RandomOxidizationProcessor.CODEC;
     public static StructureProcessorType<SeagrassProcessor> SEAGRASS_PROCESSOR = () -> SeagrassProcessor.CODEC;
+    public static StructureProcessorType<RandomSpongeProcessor> SPONGE_PROCESSOR = () -> RandomSpongeProcessor.CODEC;
 }

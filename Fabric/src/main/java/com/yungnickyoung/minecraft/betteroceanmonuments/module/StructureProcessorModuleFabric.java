@@ -16,6 +16,7 @@ public class StructureProcessorModuleFabric {
         register("sand_gravel_processor", StructureProcessorModule.SAND_GRAVEL_PROCESSOR);
         register("random_oxidization_processor", StructureProcessorModule.RANDOM_OXIDIZATION_PROCESSOR);
         register("seagrass_processor", StructureProcessorModule.SEAGRASS_PROCESSOR);
+        register("random_sponge_processor", StructureProcessorModule.SPONGE_PROCESSOR);
     }
 
     private static <P extends StructureProcessor> StructureProcessorType<P> register(String name, StructureProcessorType<P> processorType) {

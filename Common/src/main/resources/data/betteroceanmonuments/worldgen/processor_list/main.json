@@ -23,6 +23,9 @@
     },
     {
       "processor_type": "betteroceanmonuments:seagrass_processor"
+    },
+    {
+      "processor_type": "betteroceanmonuments:random_sponge_processor"
     }
   ]
 }
