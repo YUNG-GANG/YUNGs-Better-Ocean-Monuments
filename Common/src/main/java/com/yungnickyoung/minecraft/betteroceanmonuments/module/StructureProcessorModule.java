@@ -33,4 +33,7 @@ public class StructureProcessorModule {
 
     @AutoRegister("random_sponge_processor")
     public static StructureProcessorType<RandomSpongeProcessor> SPONGE_PROCESSOR = () -> RandomSpongeProcessor.CODEC;
+
+    @AutoRegister("leg_processor")
+    public static StructureProcessorType<LegProcessor> LEG_PROCESSOR = () -> LegProcessor.CODEC;
 }

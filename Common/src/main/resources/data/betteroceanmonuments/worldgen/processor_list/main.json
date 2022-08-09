@@ -26,6 +26,9 @@
     },
     {
       "processor_type": "betteroceanmonuments:random_sponge_processor"
+    },
+    {
+      "processor_type": "betteroceanmonuments:leg_processor"
     }
   ]
 }
