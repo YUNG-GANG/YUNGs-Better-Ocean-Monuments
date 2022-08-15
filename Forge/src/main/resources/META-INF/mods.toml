@@ -21,11 +21,11 @@ issueTrackerURL="https://github.com/yungnickyoung/YUNGs-Better-Ocean-Monuments/i
 [[dependencies.betteroceanmonuments]]
     modId="forge"
     mandatory=true
-    versionRange="[40.0.8,)"
+    versionRange="[40.1.0,)"
 
 [[dependencies.betteroceanmonuments]]
     modId="yungsapi"
-    versionRange="[1.18.2-Forge-2.1.3,)"
+    versionRange="[1.18.2-Forge-2.1.5,)"
     mandatory=true
     ordering="NONE"
     side="BOTH"
