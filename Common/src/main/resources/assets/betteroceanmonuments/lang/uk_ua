@@ -1,0 +1,10 @@
+{
+  "Use /locate betteroceanmonuments:ocean_monument instead!": "Використовуй /locate betteroceanmonuments:ocean_monument !",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.title": "YUNG's Кращі океанічні монументи",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.option.general.startMinY": "Океанічні монументи мін. Y",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.option.general.startMinY.@Tooltip": "Мінімальне значення Y, при якому океанічний монумент може з'являтися",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.option.general.startMaxY": "Океанічні монументи макс. Y",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.option.general.startMaxY.@Tooltip": "Максимальне значення Y, при якому океанічний монумент може з'являтися",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.option.general.disableVanillaMonuments": "Заборонити стандартні океанічні монументи",
+  "text.autoconfig.betteroceanmonuments-fabric-1_18.option.general.disableVanillaMonuments.@Tooltip": "Чи потрібно вимкнути стандартні океанічні монументи."
+}
