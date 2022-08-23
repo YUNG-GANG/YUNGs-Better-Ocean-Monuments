@@ -1,7 +1,7 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
 import com.mojang.serialization.Codec;
-import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorModule;
+import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
@@ -39,6 +39,6 @@ public class AirProcessor extends StructureProcessor {
     }
 
     protected StructureProcessorType<?> getType() {
-        return StructureProcessorModule.AIR_PROCESSOR;
+        return StructureProcessorTypeModule.AIR_PROCESSOR;
     }
 }

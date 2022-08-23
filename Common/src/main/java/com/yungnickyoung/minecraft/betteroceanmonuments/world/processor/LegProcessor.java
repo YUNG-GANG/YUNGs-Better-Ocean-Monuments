@@ -1,7 +1,7 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
 import com.mojang.serialization.Codec;
-import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorModule;
+import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -54,6 +54,6 @@ public class LegProcessor extends StructureProcessor {
     }
 
     protected StructureProcessorType<?> getType() {
-        return StructureProcessorModule.LEG_PROCESSOR;
+        return StructureProcessorTypeModule.LEG_PROCESSOR;
     }
 }

@@ -1,5 +1,9 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.services;
 
+import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
+
 public interface IModulesLoader {
-    void loadModules();
+    default void loadModules() {
+        StructureProcessorTypeModule.init();
+    }
 }

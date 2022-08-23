@@ -1,11 +1,10 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
 import com.mojang.serialization.Codec;
-import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorModule;
+import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
@@ -48,6 +47,6 @@ public class WaterlogProcessor extends StructureProcessor {
     }
 
     protected StructureProcessorType<?> getType() {
-        return StructureProcessorModule.WATERLOG_PROCESSOR;
+        return StructureProcessorTypeModule.WATERLOG_PROCESSOR;
     }
 }

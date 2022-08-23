@@ -1,7 +1,7 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
 import com.mojang.serialization.Codec;
-import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorModule;
+import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.yungsapi.world.processor.ISafeWorldModifier;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
@@ -46,6 +46,6 @@ public class SeagrassProcessor extends StructureProcessor implements ISafeWorldM
     }
 
     protected StructureProcessorType<?> getType() {
-        return StructureProcessorModule.SEAGRASS_PROCESSOR;
+        return StructureProcessorTypeModule.SEAGRASS_PROCESSOR;
     }
 }

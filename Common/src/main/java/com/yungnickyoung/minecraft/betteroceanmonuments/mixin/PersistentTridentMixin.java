@@ -1,10 +1,7 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.mixin;
 
-import com.yungnickyoung.minecraft.betteroceanmonuments.BetterOceanMonumentsCommon;
 import com.yungnickyoung.minecraft.betteroceanmonuments.mixin.accessor.ProjectileAccessor;
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import com.yungnickyoung.minecraft.betteroceanmonuments.module.TagModule;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -12,7 +9,6 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.levelgen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.level.levelgen.structure.StructureStart;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -28,8 +24,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  */
 @Mixin(AbstractArrow.class)
 public abstract class PersistentTridentMixin extends Entity {
-    private static final ResourceLocation monumentResourceLocation = new ResourceLocation(BetterOceanMonumentsCommon.MOD_ID, "ocean_monument");
-
     public PersistentTridentMixin(EntityType<?> $$0, Level $$1) {
         super($$0, $$1);
     }
@@ -37,8 +31,7 @@ public abstract class PersistentTridentMixin extends Entity {
     @Inject(method = "tickDespawn", at = @At("HEAD"), cancellable = true)
     protected void preventTridentDespawning(CallbackInfo ci) {
         if (level instanceof ServerLevel && isTrident(this) && getOwner(this).equals("e624cdc1-c238-4dde-9f22-1f76b5123ce8")) {
-            ResourceKey<ConfiguredStructureFeature<?, ?>> monumentKey = ResourceKey.create(Registry.CONFIGURED_STRUCTURE_FEATURE_REGISTRY, monumentResourceLocation);
-            StructureStart structureStart = ((ServerLevel) this.level).structureFeatureManager().getStructureWithPieceAt(this.blockPosition(), monumentKey);
+            StructureStart structureStart = ((ServerLevel) this.level).structureManager().getStructureWithPieceAt(this.blockPosition(), TagModule.BETTER_OCEAN_MONUMENT);
             if (structureStart.isValid()) {
                 ci.cancel();
             }

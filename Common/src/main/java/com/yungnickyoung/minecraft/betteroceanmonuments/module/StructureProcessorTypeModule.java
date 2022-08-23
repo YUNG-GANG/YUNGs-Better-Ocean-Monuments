@@ -1,39 +1,37 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.module;
 
 import com.yungnickyoung.minecraft.betteroceanmonuments.BetterOceanMonumentsCommon;
+import com.yungnickyoung.minecraft.betteroceanmonuments.services.Services;
 import com.yungnickyoung.minecraft.betteroceanmonuments.world.processor.*;
-import com.yungnickyoung.minecraft.yungsapi.api.autoregister.AutoRegister;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 
-@AutoRegister(BetterOceanMonumentsCommon.MOD_ID)
-public class StructureProcessorModule {
-    @AutoRegister("air_processor")
+public class StructureProcessorTypeModule {
     public static StructureProcessorType<AirProcessor> AIR_PROCESSOR = () -> AirProcessor.CODEC;
-
-    @AutoRegister("waterlog_processor")
     public static StructureProcessorType<WaterlogProcessor> WATERLOG_PROCESSOR = () -> WaterlogProcessor.CODEC;
-
-    @AutoRegister("random_prismarine_slab_decoration_processor")
     public static StructureProcessorType<RandomPrismarineSlabDecorationProcessor> RANDOM_PRISMARINE_SLAB_DECORATION_PROCESSOR = () -> RandomPrismarineSlabDecorationProcessor.CODEC;
-
-    @AutoRegister("random_dark_prismarine_slab_decoration_processor")
     public static StructureProcessorType<RandomDarkPrismarineSlabDecorationProcessor> RANDOM_DARK_PRISMARINE_SLAB_DECORATION_PROCESSOR = () -> RandomDarkPrismarineSlabDecorationProcessor.CODEC;
-
-    @AutoRegister("structure_void_processor")
     public static StructureProcessorType<StructureVoidProcessor> STRUCTURE_VOID_PROCESSOR = () -> StructureVoidProcessor.CODEC;
-
-    @AutoRegister("sand_gravel_processor")
     public static StructureProcessorType<SandGravelProcessor> SAND_GRAVEL_PROCESSOR = () -> SandGravelProcessor.CODEC;
-
-    @AutoRegister("random_oxidization_processor")
     public static StructureProcessorType<RandomOxidizationProcessor> RANDOM_OXIDIZATION_PROCESSOR = () -> RandomOxidizationProcessor.CODEC;
-
-    @AutoRegister("seagrass_processor")
     public static StructureProcessorType<SeagrassProcessor> SEAGRASS_PROCESSOR = () -> SeagrassProcessor.CODEC;
-
-    @AutoRegister("random_sponge_processor")
     public static StructureProcessorType<RandomSpongeProcessor> SPONGE_PROCESSOR = () -> RandomSpongeProcessor.CODEC;
-
-    @AutoRegister("leg_processor")
     public static StructureProcessorType<LegProcessor> LEG_PROCESSOR = () -> LegProcessor.CODEC;
+
+    public static void init() {
+        register("air_processor", AIR_PROCESSOR);
+        register("waterlog_processor", WATERLOG_PROCESSOR);
+        register("random_prismarine_slab_decoration_processor", RANDOM_PRISMARINE_SLAB_DECORATION_PROCESSOR);
+        register("random_dark_prismarine_slab_decoration_processor", RANDOM_DARK_PRISMARINE_SLAB_DECORATION_PROCESSOR);
+        register("structure_void_processor", STRUCTURE_VOID_PROCESSOR);
+        register("sand_gravel_processor", SAND_GRAVEL_PROCESSOR);
+        register("random_oxidization_processor", RANDOM_OXIDIZATION_PROCESSOR);
+        register("seagrass_processor", SEAGRASS_PROCESSOR);
+        register("random_sponge_processor", SPONGE_PROCESSOR);
+        register("leg_processor", LEG_PROCESSOR);
+    }
+
+    private static void register(String name, StructureProcessorType<?> processorType) {
+        Services.REGISTRY.registerStructureProcessorType(new ResourceLocation(BetterOceanMonumentsCommon.MOD_ID, name), processorType);
+    }
 }

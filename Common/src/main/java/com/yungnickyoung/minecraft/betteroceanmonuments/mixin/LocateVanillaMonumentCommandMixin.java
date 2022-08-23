@@ -5,11 +5,11 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import com.yungnickyoung.minecraft.betteroceanmonuments.BetterOceanMonumentsCommon;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.arguments.ResourceOrTagLocationArgument;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.commands.LocateCommand;
-import net.minecraft.world.level.levelgen.feature.ConfiguredStructureFeature;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,13 +23,13 @@ import java.util.Optional;
 @Mixin(LocateCommand.class)
 public class LocateVanillaMonumentCommandMixin {
     private static final SimpleCommandExceptionType OLD_MONUMENT_EXCEPTION =
-        new SimpleCommandExceptionType(new TextComponent("Use /locate betteroceanmonuments:ocean_monument instead!"));
+        new SimpleCommandExceptionType(Component.translatable("Use /locate structure betteroceanmonuments:ocean_monument instead!"));
 
-    @Inject(method = "locate", at = @At(value = "HEAD"), cancellable = true)
+    @Inject(method = "locateStructure", at = @At(value = "HEAD"))
     private static void overrideLocateVanillaMonument(CommandSourceStack cmdSource,
-                                                     ResourceOrTagLocationArgument.Result<ConfiguredStructureFeature<?, ?>> result,
-                                                     CallbackInfoReturnable<Integer> ci) throws CommandSyntaxException {
-        Optional<ResourceKey<ConfiguredStructureFeature<?, ?>>> optional = result.unwrap().left();
+                                                      ResourceOrTagLocationArgument.Result<Structure> result,
+                                                      CallbackInfoReturnable<Integer> ci) throws CommandSyntaxException {
+        Optional<ResourceKey<Structure>> optional = result.unwrap().left();
         if (BetterOceanMonumentsCommon.CONFIG.general.disableVanillaMonuments && optional.isPresent() && optional.get().location().equals(new ResourceLocation("monument"))) {
             throw OLD_MONUMENT_EXCEPTION.create();
         }

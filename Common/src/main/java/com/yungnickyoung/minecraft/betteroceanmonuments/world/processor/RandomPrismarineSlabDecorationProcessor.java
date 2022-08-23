@@ -1,9 +1,10 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
 import com.mojang.serialization.Codec;
-import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorModule;
+import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
@@ -15,7 +16,6 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Random;
 
 /**
  * Randomly replaces lime concrete with top or bottom prismarine slab.
@@ -34,7 +34,7 @@ public class RandomPrismarineSlabDecorationProcessor extends StructureProcessor 
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
         if (blockInfoGlobal.state.getBlock() == Blocks.LIME_CONCRETE) {
-            Random random = structurePlacementData.getRandom(blockInfoGlobal.pos);
+            RandomSource random = structurePlacementData.getRandom(blockInfoGlobal.pos);
             BlockState blockState;
             if (random.nextFloat() < .4f) {
                 blockState = Blocks.PRISMARINE_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, SlabType.TOP).setValue(SlabBlock.WATERLOGGED, true);
@@ -49,6 +49,6 @@ public class RandomPrismarineSlabDecorationProcessor extends StructureProcessor 
     }
 
     protected StructureProcessorType<?> getType() {
-        return StructureProcessorModule.RANDOM_PRISMARINE_SLAB_DECORATION_PROCESSOR;
+        return StructureProcessorTypeModule.RANDOM_PRISMARINE_SLAB_DECORATION_PROCESSOR;
     }
 }

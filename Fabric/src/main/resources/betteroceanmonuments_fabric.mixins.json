@@ -4,7 +4,6 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "betteroceanmonuments.refmap.json",
   "mixins": [
-    "DisableVanillaMonumentsMixinFabric"
   ],
   "injectors": {
     "defaultRequire": 1

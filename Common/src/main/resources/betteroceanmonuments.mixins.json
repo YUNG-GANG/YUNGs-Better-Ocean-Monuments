@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "betteroceanmonuments.refmap.json",
   "mixins": [
+    "DisableVanillaMonumentsMixin",
     "LocateVanillaMonumentCommandMixin",
     "PersistentTridentMixin",
     "accessor.ProjectileAccessor",

@@ -21,8 +21,6 @@ public class ConfigModuleFabric {
     }
 
     private static void bakeConfig(BOMConfigFabric configFabric) {
-        BetterOceanMonumentsCommon.CONFIG.general.startMinY = configFabric.general.startMinY;
-        BetterOceanMonumentsCommon.CONFIG.general.startMaxY = configFabric.general.startMaxY;
         BetterOceanMonumentsCommon.CONFIG.general.disableVanillaMonuments = configFabric.general.disableVanillaMonuments;
     }
 }

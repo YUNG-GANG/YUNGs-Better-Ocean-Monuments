@@ -1,9 +1,10 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
 import com.mojang.serialization.Codec;
-import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorModule;
+import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -13,7 +14,6 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Random;
 
 /**
  * Randomizes the oxidization level of copper blocks.
@@ -31,7 +31,7 @@ public class RandomOxidizationProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        Random random = structurePlacementData.getRandom(blockInfoGlobal.pos);
+        RandomSource random = structurePlacementData.getRandom(blockInfoGlobal.pos);
         BlockState blockState;
         if (blockInfoGlobal.state.getBlock() == Blocks.OXIDIZED_COPPER) {
             if (random.nextFloat() < 0.1f) blockState = Blocks.EXPOSED_COPPER.defaultBlockState();
@@ -58,6 +58,6 @@ public class RandomOxidizationProcessor extends StructureProcessor {
     }
 
     protected StructureProcessorType<?> getType() {
-        return StructureProcessorModule.RANDOM_OXIDIZATION_PROCESSOR;
+        return StructureProcessorTypeModule.RANDOM_OXIDIZATION_PROCESSOR;
     }
 }
