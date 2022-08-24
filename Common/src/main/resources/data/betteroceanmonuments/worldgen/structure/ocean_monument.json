@@ -3,14 +3,15 @@
   "biomes": "#betteroceanmonuments:has_structure/better_ocean_monument",
   "step": "surface_structures",
   "start_pool": "betteroceanmonuments:starts",
+  "start_jigsaw_name": "betteroceanmonuments:anchor",
   "size": 20,
   "start_height": {
     "type": "minecraft:uniform",
     "min_inclusive": {
-      "absolute": 11
+      "absolute": 54
     },
     "max_inclusive": {
-      "absolute": 21
+      "absolute": 54
     }
   },
   "use_expansion_hack": false,
