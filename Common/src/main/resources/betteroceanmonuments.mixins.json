@@ -6,9 +6,12 @@
   "mixins": [
     "DisableVanillaMonumentsMixin",
     "LocateVanillaMonumentCommandMixin",
+    "NoMagmaInStructuresMixin",
     "PersistentTridentMixin",
     "accessor.ProjectileAccessor",
-    "accessor.StructureProcessorAccessor"
+    "accessor.StructureManagerAccessor",
+    "accessor.StructureProcessorAccessor",
+    "accessor.WorldGenRegionAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

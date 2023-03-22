@@ -26,7 +26,7 @@ public class LocateVanillaMonumentCommandMixin {
         new SimpleCommandExceptionType(Component.translatable("Use /locate structure betteroceanmonuments:ocean_monument instead!"));
 
     @Inject(method = "locateStructure", at = @At(value = "HEAD"))
-    private static void overrideLocateVanillaMonument(CommandSourceStack cmdSource,
+    private static void betteroceanmonuments_overrideLocateVanillaMonument(CommandSourceStack cmdSource,
                                                       ResourceOrTagKeyArgument.Result<Structure> result,
                                                       CallbackInfoReturnable<Integer> ci) throws CommandSyntaxException {
         Optional<ResourceKey<Structure>> optional = result.unwrap().left();

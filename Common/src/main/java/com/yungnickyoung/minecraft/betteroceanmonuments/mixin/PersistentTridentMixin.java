@@ -11,6 +11,7 @@ import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.structure.StructureStart;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -29,19 +30,21 @@ public abstract class PersistentTridentMixin extends Entity {
     }
 
     @Inject(method = "tickDespawn", at = @At("HEAD"), cancellable = true)
-    protected void preventTridentDespawning(CallbackInfo ci) {
-        if (level instanceof ServerLevel && isTrident(this) && getOwner(this).equals("e624cdc1-c238-4dde-9f22-1f76b5123ce8")) {
-            StructureStart structureStart = ((ServerLevel) this.level).structureManager().getStructureWithPieceAt(this.blockPosition(), TagModule.BETTER_OCEAN_MONUMENT);
+    protected void betteroceanmonuments_preventTridentDespawning(CallbackInfo ci) {
+        if (level instanceof ServerLevel serverLevel && isTrident(this) && getOwner(this).equals("e624cdc1-c238-4dde-9f22-1f76b5123ce8")) {
+            StructureStart structureStart = serverLevel.structureManager().getStructureWithPieceAt(this.blockPosition(), TagModule.BETTER_OCEAN_MONUMENT);
             if (structureStart.isValid()) {
                 ci.cancel();
             }
         }
     }
 
+    @Unique
     private boolean isTrident(Object object) {
         return object instanceof ThrownTrident;
     }
 
+    @Unique
     private String getOwner(Object object) {
         if (object instanceof Projectile projectile) {
             if (((ProjectileAccessor)projectile).getOwnerUUID() != null) {
