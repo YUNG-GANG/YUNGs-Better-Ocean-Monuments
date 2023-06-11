@@ -30,11 +30,11 @@ public class RandomSpongeProcessor extends StructureProcessor implements ISafeWo
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.is(Blocks.ORANGE_STAINED_GLASS)) {
-            if (structurePlacementData.getRandom(blockInfoGlobal.pos).nextFloat() < 0.75f) {
-                return new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, Blocks.WET_SPONGE.defaultBlockState(), null);
+        if (blockInfoGlobal.state().is(Blocks.ORANGE_STAINED_GLASS)) {
+            if (structurePlacementData.getRandom(blockInfoGlobal.pos()).nextFloat() < 0.75f) {
+                return new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), Blocks.WET_SPONGE.defaultBlockState(), null);
             } else {
-                return new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, Blocks.WATER.defaultBlockState(), null);
+                return new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), Blocks.WATER.defaultBlockState(), null);
             }
         }
 

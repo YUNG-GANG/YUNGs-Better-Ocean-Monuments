@@ -32,14 +32,14 @@ public class SeagrassProcessor extends StructureProcessor implements ISafeWorldM
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.is(Blocks.RED_SANDSTONE_SLAB)) {
-            return new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, Blocks.TALL_SEAGRASS.defaultBlockState().setValue(TallSeagrassBlock.HALF, DoubleBlockHalf.LOWER), null);
+        if (blockInfoGlobal.state().is(Blocks.RED_SANDSTONE_SLAB)) {
+            return new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), Blocks.TALL_SEAGRASS.defaultBlockState().setValue(TallSeagrassBlock.HALF, DoubleBlockHalf.LOWER), null);
         }
-        if (blockInfoGlobal.state.is(Blocks.END_STONE_BRICK_SLAB)) {
-            return new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, Blocks.TALL_SEAGRASS.defaultBlockState().setValue(TallSeagrassBlock.HALF, DoubleBlockHalf.UPPER), null);
+        if (blockInfoGlobal.state().is(Blocks.END_STONE_BRICK_SLAB)) {
+            return new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), Blocks.TALL_SEAGRASS.defaultBlockState().setValue(TallSeagrassBlock.HALF, DoubleBlockHalf.UPPER), null);
         }
-        if (blockInfoGlobal.state.is(Blocks.BRICK_SLAB)) {
-            return new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, Blocks.SEAGRASS.defaultBlockState(), null);
+        if (blockInfoGlobal.state().is(Blocks.BRICK_SLAB)) {
+            return new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), Blocks.SEAGRASS.defaultBlockState(), null);
         }
 
         return blockInfoGlobal;

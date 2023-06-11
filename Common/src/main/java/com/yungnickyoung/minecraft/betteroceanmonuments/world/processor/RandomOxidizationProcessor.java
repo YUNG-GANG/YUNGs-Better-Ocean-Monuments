@@ -31,28 +31,28 @@ public class RandomOxidizationProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        RandomSource random = structurePlacementData.getRandom(blockInfoGlobal.pos);
+        RandomSource random = structurePlacementData.getRandom(blockInfoGlobal.pos());
         BlockState blockState;
-        if (blockInfoGlobal.state.getBlock() == Blocks.OXIDIZED_COPPER) {
+        if (blockInfoGlobal.state().getBlock() == Blocks.OXIDIZED_COPPER) {
             if (random.nextFloat() < 0.1f) blockState = Blocks.EXPOSED_COPPER.defaultBlockState();
             else if (random.nextFloat() < 0.3f) blockState = Blocks.WEATHERED_COPPER.defaultBlockState();
             else blockState = Blocks.OXIDIZED_COPPER.defaultBlockState();
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, blockState, blockInfoGlobal.nbt);
-        } else if (blockInfoGlobal.state.getBlock() == Blocks.OXIDIZED_CUT_COPPER) {
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), blockState, blockInfoGlobal.nbt());
+        } else if (blockInfoGlobal.state().getBlock() == Blocks.OXIDIZED_CUT_COPPER) {
             if (random.nextFloat() < 0.1f) blockState = Blocks.EXPOSED_CUT_COPPER.defaultBlockState();
             else if (random.nextFloat() < 0.3f) blockState = Blocks.WEATHERED_CUT_COPPER.defaultBlockState();
             else blockState = Blocks.OXIDIZED_CUT_COPPER.defaultBlockState();
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, blockState, blockInfoGlobal.nbt);
-        } else if (blockInfoGlobal.state.getBlock() == Blocks.OXIDIZED_CUT_COPPER_STAIRS) {
-            if (random.nextFloat() < 0.1f) blockState = Blocks.EXPOSED_CUT_COPPER_STAIRS.withPropertiesOf(blockInfoGlobal.state);
-            else if (random.nextFloat() < 0.3f) blockState = Blocks.WEATHERED_CUT_COPPER_STAIRS.withPropertiesOf(blockInfoGlobal.state);
-            else blockState = Blocks.OXIDIZED_CUT_COPPER_STAIRS.withPropertiesOf(blockInfoGlobal.state);
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, blockState, blockInfoGlobal.nbt);
-        } else if (blockInfoGlobal.state.getBlock() == Blocks.OXIDIZED_CUT_COPPER_SLAB) {
-            if (random.nextFloat() < 0.1f) blockState = Blocks.EXPOSED_CUT_COPPER_SLAB.withPropertiesOf(blockInfoGlobal.state);
-            else if (random.nextFloat() < 0.3f) blockState = Blocks.WEATHERED_CUT_COPPER_SLAB.withPropertiesOf(blockInfoGlobal.state);
-            else blockState = Blocks.OXIDIZED_CUT_COPPER_SLAB.withPropertiesOf(blockInfoGlobal.state);
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, blockState, blockInfoGlobal.nbt);
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), blockState, blockInfoGlobal.nbt());
+        } else if (blockInfoGlobal.state().getBlock() == Blocks.OXIDIZED_CUT_COPPER_STAIRS) {
+            if (random.nextFloat() < 0.1f) blockState = Blocks.EXPOSED_CUT_COPPER_STAIRS.withPropertiesOf(blockInfoGlobal.state());
+            else if (random.nextFloat() < 0.3f) blockState = Blocks.WEATHERED_CUT_COPPER_STAIRS.withPropertiesOf(blockInfoGlobal.state());
+            else blockState = Blocks.OXIDIZED_CUT_COPPER_STAIRS.withPropertiesOf(blockInfoGlobal.state());
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), blockState, blockInfoGlobal.nbt());
+        } else if (blockInfoGlobal.state().getBlock() == Blocks.OXIDIZED_CUT_COPPER_SLAB) {
+            if (random.nextFloat() < 0.1f) blockState = Blocks.EXPOSED_CUT_COPPER_SLAB.withPropertiesOf(blockInfoGlobal.state());
+            else if (random.nextFloat() < 0.3f) blockState = Blocks.WEATHERED_CUT_COPPER_SLAB.withPropertiesOf(blockInfoGlobal.state());
+            else blockState = Blocks.OXIDIZED_CUT_COPPER_SLAB.withPropertiesOf(blockInfoGlobal.state());
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), blockState, blockInfoGlobal.nbt());
         }
         return blockInfoGlobal;
     }

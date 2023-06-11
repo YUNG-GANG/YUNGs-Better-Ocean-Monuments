@@ -31,7 +31,7 @@ public abstract class PersistentTridentMixin extends Entity {
 
     @Inject(method = "tickDespawn", at = @At("HEAD"), cancellable = true)
     protected void betteroceanmonuments_preventTridentDespawning(CallbackInfo ci) {
-        if (level instanceof ServerLevel serverLevel && isTrident(this) && getOwner(this).equals("e624cdc1-c238-4dde-9f22-1f76b5123ce8")) {
+        if (this.level() instanceof ServerLevel serverLevel && isTrident(this) && getOwner(this).equals("e624cdc1-c238-4dde-9f22-1f76b5123ce8")) {
             StructureStart structureStart = serverLevel.structureManager().getStructureWithPieceAt(this.blockPosition(), TagModule.BETTER_OCEAN_MONUMENT);
             if (structureStart.isValid()) {
                 ci.cancel();

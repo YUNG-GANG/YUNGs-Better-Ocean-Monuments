@@ -31,8 +31,8 @@ public class StructureVoidProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.is(Blocks.PURPUR_SLAB) || blockInfoGlobal.state.is(Blocks.BROWN_WOOL)) {
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, levelReader.getBlockState(blockInfoGlobal.pos), blockInfoGlobal.nbt);
+        if (blockInfoGlobal.state().is(Blocks.PURPUR_SLAB) || blockInfoGlobal.state().is(Blocks.BROWN_WOOL)) {
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), levelReader.getBlockState(blockInfoGlobal.pos()), blockInfoGlobal.nbt());
         }
         return blockInfoGlobal;
     }

@@ -29,8 +29,8 @@ public class SandGravelProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.getBlock() == Blocks.YELLOW_STAINED_GLASS) {
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, Blocks.GRAVEL.defaultBlockState(), blockInfoGlobal.nbt);
+        if (blockInfoGlobal.state().getBlock() == Blocks.YELLOW_STAINED_GLASS) {
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), Blocks.GRAVEL.defaultBlockState(), blockInfoGlobal.nbt());
         }
         return blockInfoGlobal;
     }

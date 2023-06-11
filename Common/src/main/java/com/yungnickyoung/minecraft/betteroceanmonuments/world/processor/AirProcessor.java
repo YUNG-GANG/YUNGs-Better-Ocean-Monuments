@@ -29,11 +29,11 @@ public class AirProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.getBlock() == Blocks.AIR) {
-            if (blockInfoGlobal.pos.getY() >= levelReader.getSeaLevel()) {
+        if (blockInfoGlobal.state().getBlock() == Blocks.AIR) {
+            if (blockInfoGlobal.pos().getY() >= levelReader.getSeaLevel()) {
                 return blockInfoGlobal;
             }
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, Blocks.WATER.defaultBlockState(), null);
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), Blocks.WATER.defaultBlockState(), null);
         }
         return blockInfoGlobal;
     }

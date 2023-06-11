@@ -33,8 +33,8 @@ public class RandomDarkPrismarineSlabDecorationProcessor extends StructureProces
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.getBlock() == Blocks.BLUE_CONCRETE) {
-            RandomSource random = structurePlacementData.getRandom(blockInfoGlobal.pos);
+        if (blockInfoGlobal.state().getBlock() == Blocks.BLUE_CONCRETE) {
+            RandomSource random = structurePlacementData.getRandom(blockInfoGlobal.pos());
             BlockState blockState;
             if (random.nextFloat() < .4f) {
                 blockState = Blocks.DARK_PRISMARINE_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, SlabType.TOP).setValue(SlabBlock.WATERLOGGED, true);
@@ -43,7 +43,7 @@ public class RandomDarkPrismarineSlabDecorationProcessor extends StructureProces
             } else {
                 blockState = Blocks.WATER.defaultBlockState();
             }
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, blockState, blockInfoGlobal.nbt);
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), blockState, blockInfoGlobal.nbt());
         }
         return blockInfoGlobal;
     }

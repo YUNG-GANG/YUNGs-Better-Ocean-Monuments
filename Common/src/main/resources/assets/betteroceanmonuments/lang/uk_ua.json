@@ -1,6 +1,6 @@
 {
   "Use /locate structure betteroceanmonuments:ocean_monument instead!": "Використовуй /locate structure betteroceanmonuments:ocean_monument !",
-  "text.autoconfig.betteroceanmonuments-fabric-1_19_4.title": "YUNG's Кращі океанічні монументи",
-  "text.autoconfig.betteroceanmonuments-fabric-1_19_4.option.general.disableVanillaMonuments": "Заборонити стандартні океанічні монументи",
-  "text.autoconfig.betteroceanmonuments-fabric-1_19_4.option.general.disableVanillaMonuments.@Tooltip": "Чи потрібно вимкнути стандартні океанічні монументи."
+  "text.autoconfig.betteroceanmonuments-fabric-1_20.title": "YUNG's Кращі океанічні монументи",
+  "text.autoconfig.betteroceanmonuments-fabric-1_20.option.general.disableVanillaMonuments": "Заборонити стандартні океанічні монументи",
+  "text.autoconfig.betteroceanmonuments-fabric-1_20.option.general.disableVanillaMonuments.@Tooltip": "Чи потрібно вимкнути стандартні океанічні монументи."
 }
