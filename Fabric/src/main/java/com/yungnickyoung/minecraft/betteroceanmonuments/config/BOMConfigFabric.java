@@ -4,7 +4,7 @@ import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
-@Config(name="betteroceanmonuments-fabric-1_20")
+@Config(name="betteroceanmonuments-fabric-1_20_4")
 public class BOMConfigFabric implements ConfigData {
     @ConfigEntry.Category("Better Ocean Monuments")
     @ConfigEntry.Gui.TransitiveObject
