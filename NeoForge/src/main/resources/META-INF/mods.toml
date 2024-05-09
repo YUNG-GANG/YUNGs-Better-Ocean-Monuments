@@ -11,7 +11,7 @@ issueTrackerURL="https://github.com/yungnickyoung/YUNGs-Better-Ocean-Monuments/i
     authors="YUNGNICKYOUNG, Tera"
     description="${mod_description}"
     logoFile="logo.png"
-    displayURL="https://www.curseforge.com/minecraft/mc-mods/yungs-better-ocean-monuments"
+    displayURL="https://www.curseforge.com/minecraft/mc-mods/yungs-better-ocean-monuments-neoforge"
 
 [modproperties.${mod_id}]
     catalogueImageIcon="catalogue_icon.png"
