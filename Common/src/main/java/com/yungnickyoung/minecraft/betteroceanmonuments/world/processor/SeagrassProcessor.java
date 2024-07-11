@@ -1,6 +1,6 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.processor.ISafeWorldModifier;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -23,7 +23,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public class SeagrassProcessor extends StructureProcessor implements ISafeWorldModifier {
     public static final SeagrassProcessor INSTANCE = new SeagrassProcessor();
-    public static final Codec<SeagrassProcessor> CODEC = Codec.unit(() -> INSTANCE);
+    public static final MapCodec<SeagrassProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,

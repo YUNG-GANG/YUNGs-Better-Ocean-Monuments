@@ -1,6 +1,6 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
@@ -22,7 +22,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public class WaterlogProcessor extends StructureProcessor {
     public static final WaterlogProcessor INSTANCE = new WaterlogProcessor();
-    public static final Codec<WaterlogProcessor> CODEC = Codec.unit(() -> INSTANCE);
+    public static final MapCodec<WaterlogProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,

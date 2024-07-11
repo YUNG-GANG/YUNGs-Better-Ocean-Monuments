@@ -1,6 +1,6 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
@@ -20,7 +20,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public class AirProcessor extends StructureProcessor {
     public static final AirProcessor INSTANCE = new AirProcessor();
-    public static final Codec<AirProcessor> CODEC = Codec.unit(() -> INSTANCE);
+    public static final MapCodec<AirProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,

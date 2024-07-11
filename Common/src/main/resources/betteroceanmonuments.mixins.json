@@ -8,10 +8,7 @@
     "LocateVanillaMonumentCommandMixin",
     "NoMagmaInStructuresMixin",
     "PersistentTridentMixin",
-    "accessor.ProjectileAccessor",
-    "accessor.StructureManagerAccessor",
-    "accessor.StructureProcessorAccessor",
-    "accessor.WorldGenRegionAccessor"
+    "accessor.ProjectileAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

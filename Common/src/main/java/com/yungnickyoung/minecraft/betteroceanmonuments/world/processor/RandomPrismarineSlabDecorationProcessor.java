@@ -1,6 +1,6 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
@@ -24,7 +24,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public class RandomPrismarineSlabDecorationProcessor extends StructureProcessor {
     public static final RandomPrismarineSlabDecorationProcessor INSTANCE = new RandomPrismarineSlabDecorationProcessor();
-    public static final Codec<RandomPrismarineSlabDecorationProcessor> CODEC = Codec.unit(() -> INSTANCE);
+    public static final MapCodec<RandomPrismarineSlabDecorationProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,

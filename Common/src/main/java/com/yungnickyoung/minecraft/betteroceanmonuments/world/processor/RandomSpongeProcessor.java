@@ -1,6 +1,6 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.processor.ISafeWorldModifier;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public class RandomSpongeProcessor extends StructureProcessor implements ISafeWorldModifier {
     public static final RandomSpongeProcessor INSTANCE = new RandomSpongeProcessor();
-    public static final Codec<RandomSpongeProcessor> CODEC = Codec.unit(() -> INSTANCE);
+    public static final MapCodec<RandomSpongeProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
