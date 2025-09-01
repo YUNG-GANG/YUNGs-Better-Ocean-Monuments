@@ -6,8 +6,7 @@
   "mixins": [
     "DisableVanillaMonumentsMixin",
     "LocateVanillaMonumentCommandMixin",
-    "PersistentTridentMixin",
-    "accessor.ProjectileAccessor"
+    "PersistentTridentMixin"
   ],
   "injectors": {
     "defaultRequire": 1
