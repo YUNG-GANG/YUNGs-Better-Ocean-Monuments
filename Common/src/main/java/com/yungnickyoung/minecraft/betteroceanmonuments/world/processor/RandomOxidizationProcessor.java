@@ -2,7 +2,7 @@ package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
 import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
-import net.minecraft.MethodsReturnNonnullByDefault;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelReader;
@@ -13,13 +13,13 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
-import javax.annotation.ParametersAreNonnullByDefault;
+
 
 /**
  * Randomizes the oxidization level of copper blocks.
  */
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
+
+
 public class RandomOxidizationProcessor extends StructureProcessor {
     public static final RandomOxidizationProcessor INSTANCE = new RandomOxidizationProcessor();
     public static final MapCodec<RandomOxidizationProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
