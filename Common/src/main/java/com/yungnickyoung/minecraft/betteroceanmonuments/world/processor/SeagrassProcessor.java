@@ -3,7 +3,7 @@ package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.processor.ISafeWorldModifier;
-import net.minecraft.MethodsReturnNonnullByDefault;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
@@ -14,13 +14,13 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
-import javax.annotation.ParametersAreNonnullByDefault;
+
 
 /**
  * Replaces various slab placeholder blocks with seagrass.
  */
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
+
+
 public class SeagrassProcessor extends StructureProcessor implements ISafeWorldModifier {
     public static final SeagrassProcessor INSTANCE = new SeagrassProcessor();
     public static final MapCodec<SeagrassProcessor> CODEC = MapCodec.unit(() -> INSTANCE);

@@ -11,7 +11,7 @@ import net.neoforged.neoforge.event.level.LevelEvent;
 
 public class ConfigModuleNeoForge {
     public static void init(ModContainer container) {
-        container.registerConfig(ModConfig.Type.COMMON, BOMConfigForge.SPEC, "betteroceanmonuments-neoforge-1_21.toml");
+        container.registerConfig(ModConfig.Type.COMMON, BOMConfigForge.SPEC, "betteroceanmonuments-neoforge-26_1.toml");
         NeoForge.EVENT_BUS.addListener(ConfigModuleNeoForge::onWorldLoad);
         BetterOceanMonumentsNeoForge.loadingContextEventBus.addListener(ConfigModuleNeoForge::onConfigChange);
     }

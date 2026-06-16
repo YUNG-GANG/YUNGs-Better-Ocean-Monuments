@@ -4,10 +4,11 @@ import com.yungnickyoung.minecraft.betteroceanmonuments.mixin.accessor.Projectil
 import com.yungnickyoung.minecraft.betteroceanmonuments.module.TagModule;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityReference;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.arrow.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.ThrownTrident;
+import net.minecraft.world.entity.projectile.arrow.ThrownTrident;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.structure.StructureStart;
 import org.spongepowered.asm.mixin.Mixin;
@@ -47,8 +48,9 @@ public abstract class PersistentTridentMixin extends Entity {
     @Unique
     private String getOwner(Object object) {
         if (object instanceof Projectile projectile) {
-            if (((ProjectileAccessor)projectile).getOwnerUUID() != null) {
-                return ((ProjectileAccessor)projectile).getOwnerUUID().toString();
+            var owner = ((ProjectileAccessor) projectile).getOwner();
+            if (owner != null) {
+                return owner.getUUID().toString();
             }
         }
         return "";
