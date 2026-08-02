@@ -8,7 +8,6 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 
@@ -18,7 +17,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
  */
 
 
-public class SandGravelProcessor extends StructureProcessor {
+public class SandGravelProcessor implements StructureProcessor {
     public static final SandGravelProcessor INSTANCE = new SandGravelProcessor();
     public static final MapCodec<SandGravelProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
@@ -26,16 +25,16 @@ public class SandGravelProcessor extends StructureProcessor {
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
                                                              BlockPos jigsawPiecePos,
                                                              BlockPos jigsawPieceBottomCenterPos,
-                                                             StructureTemplate.StructureBlockInfo blockInfoLocal,
+                                                             BlockPos templateRelativePos,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state().getBlock() == Blocks.YELLOW_STAINED_GLASS) {
+        if (blockInfoGlobal.state().getBlock() == Blocks.STAINED_GLASS.yellow()) {
             blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), Blocks.GRAVEL.defaultBlockState(), blockInfoGlobal.nbt());
         }
         return blockInfoGlobal;
     }
 
-    protected StructureProcessorType<?> getType() {
+    public MapCodec<? extends StructureProcessor> codec() {
         return StructureProcessorTypeModule.SAND_GRAVEL_PROCESSOR;
     }
 }

@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 
@@ -22,7 +21,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
  */
 
 
-public class RandomPrismarineSlabDecorationProcessor extends StructureProcessor {
+public class RandomPrismarineSlabDecorationProcessor implements StructureProcessor {
     public static final RandomPrismarineSlabDecorationProcessor INSTANCE = new RandomPrismarineSlabDecorationProcessor();
     public static final MapCodec<RandomPrismarineSlabDecorationProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
@@ -30,10 +29,10 @@ public class RandomPrismarineSlabDecorationProcessor extends StructureProcessor 
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
                                                              BlockPos jigsawPiecePos,
                                                              BlockPos jigsawPieceBottomCenterPos,
-                                                             StructureTemplate.StructureBlockInfo blockInfoLocal,
+                                                             BlockPos templateRelativePos,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state().getBlock() == Blocks.LIME_CONCRETE) {
+        if (blockInfoGlobal.state().getBlock() == Blocks.CONCRETE.lime()) {
             RandomSource random = structurePlacementData.getRandom(blockInfoGlobal.pos());
             BlockState blockState;
             if (random.nextFloat() < .4f) {
@@ -48,7 +47,7 @@ public class RandomPrismarineSlabDecorationProcessor extends StructureProcessor 
         return blockInfoGlobal;
     }
 
-    protected StructureProcessorType<?> getType() {
+    public MapCodec<? extends StructureProcessor> codec() {
         return StructureProcessorTypeModule.RANDOM_PRISMARINE_SLAB_DECORATION_PROCESSOR;
     }
 }
