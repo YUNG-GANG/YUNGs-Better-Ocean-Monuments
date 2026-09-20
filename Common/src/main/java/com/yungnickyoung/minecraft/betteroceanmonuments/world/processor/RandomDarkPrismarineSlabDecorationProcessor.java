@@ -1,10 +1,10 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
 import com.mojang.serialization.MapCodec;
-import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 
@@ -22,7 +21,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
  */
 
 
-public class RandomDarkPrismarineSlabDecorationProcessor extends StructureProcessor {
+public class RandomDarkPrismarineSlabDecorationProcessor implements StructureProcessor {
     public static final RandomDarkPrismarineSlabDecorationProcessor INSTANCE = new RandomDarkPrismarineSlabDecorationProcessor();
     public static final MapCodec<RandomDarkPrismarineSlabDecorationProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
@@ -30,10 +29,10 @@ public class RandomDarkPrismarineSlabDecorationProcessor extends StructureProces
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
                                                              BlockPos jigsawPiecePos,
                                                              BlockPos jigsawPieceBottomCenterPos,
-                                                             StructureTemplate.StructureBlockInfo blockInfoLocal,
+                                                             BlockPos blockPos,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state().getBlock() == Blocks.BLUE_CONCRETE) {
+        if (blockInfoGlobal.state().getBlock() == Blocks.CONCRETE.pick(DyeColor.BLUE)) {
             RandomSource random = structurePlacementData.getRandom(blockInfoGlobal.pos());
             BlockState blockState;
             if (random.nextFloat() < .4f) {
@@ -48,7 +47,8 @@ public class RandomDarkPrismarineSlabDecorationProcessor extends StructureProces
         return blockInfoGlobal;
     }
 
-    protected StructureProcessorType<?> getType() {
-        return StructureProcessorTypeModule.RANDOM_DARK_PRISMARINE_SLAB_DECORATION_PROCESSOR;
+    @Override
+    public MapCodec<? extends StructureProcessor> codec() {
+        return CODEC;
     }
 }

@@ -1,15 +1,14 @@
 package com.yungnickyoung.minecraft.betteroceanmonuments.world.processor;
 
 import com.mojang.serialization.MapCodec;
-import com.yungnickyoung.minecraft.betteroceanmonuments.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.processor.ISafeWorldModifier;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 
@@ -19,7 +18,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
  */
 
 
-public class RandomSpongeProcessor extends StructureProcessor implements ISafeWorldModifier {
+public class RandomSpongeProcessor implements StructureProcessor, ISafeWorldModifier {
     public static final RandomSpongeProcessor INSTANCE = new RandomSpongeProcessor();
     public static final MapCodec<RandomSpongeProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
@@ -27,10 +26,10 @@ public class RandomSpongeProcessor extends StructureProcessor implements ISafeWo
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
                                                              BlockPos jigsawPiecePos,
                                                              BlockPos jigsawPieceBottomCenterPos,
-                                                             StructureTemplate.StructureBlockInfo blockInfoLocal,
+                                                             BlockPos blockPos,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state().is(Blocks.ORANGE_STAINED_GLASS)) {
+        if (blockInfoGlobal.state().is(Blocks.STAINED_GLASS.pick(DyeColor.ORANGE))) {
             if (structurePlacementData.getRandom(blockInfoGlobal.pos()).nextFloat() < 0.75f) {
                 return new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), Blocks.WET_SPONGE.defaultBlockState(), null);
             } else {
@@ -41,7 +40,8 @@ public class RandomSpongeProcessor extends StructureProcessor implements ISafeWo
         return blockInfoGlobal;
     }
 
-    protected StructureProcessorType<?> getType() {
-        return StructureProcessorTypeModule.SPONGE_PROCESSOR;
+    @Override
+    public MapCodec<? extends StructureProcessor> codec() {
+        return CODEC;
     }
 }
